@@ -17,11 +17,15 @@ class gameFragment : Fragment() {
     }
 
     private lateinit var viewModel: GameViewModel
-
+    var count = 0
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<GameFragmentBinding>(inflater,
                 R.layout.game_fragment,container,false)
+
+        binding.pushButton.setOnClickListener { view : View ->
+            count += 1
+        }
         return binding.root
     }
 
