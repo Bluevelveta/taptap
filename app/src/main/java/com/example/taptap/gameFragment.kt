@@ -7,33 +7,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
-import com.example.taptap.databinding.TitleFragmentBinding
+import com.example.taptap.databinding.GameFragmentBinding
 
 
-class titleFragment : Fragment() {
+class gameFragment : Fragment() {
 
     companion object {
-        fun newInstance() = titleFragment()
+        fun newInstance() = gameFragment()
     }
 
-    private lateinit var viewModel: TitleViewModel
+    private lateinit var viewModel: GameViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val binding = DataBindingUtil.inflate<TitleFragmentBinding>(inflater,
-            R.layout.title_fragment,container,false)
-
-        binding.playButton.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
-        }
-
+        val binding = DataBindingUtil.inflate<GameFragmentBinding>(inflater,
+                R.layout.game_fragment,container,false)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(TitleViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
