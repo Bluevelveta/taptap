@@ -2,4 +2,9 @@
     <string name="app_name">taptap</string>
     <string name="title">Taptap!!!</string>
     <string name="text_point">Score :</string>
+    <string name="your_score">Your Score</string>
+    <string name="retry">retry</string>
+    <string name="home">home</string>
+    <string name="share">share</string>
+    <string name="shareText">ฉันได้คะแนน %1$d จากแอพ Taptap!</string>
 </resources>

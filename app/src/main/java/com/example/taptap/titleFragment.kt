@@ -13,9 +13,6 @@ import com.example.taptap.databinding.TitleFragmentBinding
 
 class titleFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = titleFragment()
-    }
 
     private lateinit var viewModel: TitleViewModel
 
@@ -25,7 +22,11 @@ class titleFragment : Fragment() {
             R.layout.title_fragment,container,false)
 
         binding.playButton.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+            binding.apply {
+                if(playerName.text.toString() != ""){
+                    view.findNavController().navigate(titleFragmentDirections.actionTitleFragmentToGameFragment(playerName.text.toString()))
+                }
+            }
         }
 
         return binding.root

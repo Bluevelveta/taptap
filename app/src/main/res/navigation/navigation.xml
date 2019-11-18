@@ -15,5 +15,29 @@
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.example.taptap.gameFragment"
-        android:label="gameFragment" />
+        android:label="gameFragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.example.taptap.scoreFragment"
+        android:label="scoreFragment" >
+        <action
+            android:id="@+id/action_scoreFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_scoreFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
 </navigation>

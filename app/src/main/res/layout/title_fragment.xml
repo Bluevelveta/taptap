@@ -30,12 +30,12 @@
             android:layout_height="53dp"
             android:layout_marginTop="100dp"
             android:text="Button"
-            app:layout_constraintEnd_toEndOf="@+id/editText2"
-            app:layout_constraintStart_toStartOf="@+id/editText2"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintEnd_toEndOf="@+id/player_name"
+            app:layout_constraintStart_toStartOf="@+id/player_name"
+            app:layout_constraintTop_toBottomOf="@+id/player_name" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/player_name"
             android:layout_width="233dp"
             android:layout_height="66dp"
             android:layout_marginTop="76dp"
