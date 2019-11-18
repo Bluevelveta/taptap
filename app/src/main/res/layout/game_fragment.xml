@@ -1,35 +1,49 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".gameFragment">
+<data>
+    <variable
+        name="gameViewModel"
+        type="com.example.taptap.GameViewModel"/>
+</data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/push_button"
+            android:layout_width="275dp"
+            android:layout_height="283dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/button_default"
+            android:onClick="@{() -> gameViewModel.increaseScore()}"
+            app:layout_constraintEnd_toEndOf="@+id/timeText"
+            app:layout_constraintStart_toStartOf="@+id/scoreText"
+            app:layout_constraintTop_toBottomOf="@+id/timeText" />
+
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/scoreText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="116dp"
-            android:text="gameView"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="80dp"
+            android:text="@{gameViewModel.currentScoreString}"
+            app:layout_constraintEnd_toStartOf="@+id/timeText"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/push_button"
+        <TextView
+            android:id="@+id/timeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="152dp"
-            android:text="Button"
+            android:layout_marginTop="80dp"
+            android:text="@{gameViewModel.currentTimerString}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/scoreText"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
 </layout>

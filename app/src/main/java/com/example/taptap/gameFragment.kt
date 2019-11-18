@@ -23,11 +23,16 @@ class gameFragment : Fragment() {
         val binding = DataBindingUtil.inflate<GameFragmentBinding>(inflater,
                 R.layout.game_fragment,container,false)
 
-        binding.pushButton.setOnClickListener { view : View ->
-            count += 1
-        }
+
+        viewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
+
+        binding.lifecycleOwner = this
+        binding.gameViewModel = viewModel
         return binding.root
+
     }
+
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
