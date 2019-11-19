@@ -28,7 +28,9 @@ class scoreFragment : Fragment() {
             R.layout.score_fragment,container,false)
 
 
-        viewModelFactory = ScoreViewModelFactory(scoreFragmentArgs.fromBundle(arguments!!).score,scoreFragmentArgs.fromBundle(arguments!!).name)
+        val application = requireNotNull(this.activity).application
+        val dataSource = UserDatabase.getInstance(application).scoreDatabaseDao
+        viewModelFactory = ScoreViewModelFactory(scoreFragmentArgs.fromBundle(arguments!!).score,scoreFragmentArgs.fromBundle(arguments!!).name,dataSource, application)
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(ScoreViewModel::class.java)
 
         viewModel.eventTaptap.observe(this,Observer<Boolean>{
@@ -42,6 +44,12 @@ class scoreFragment : Fragment() {
                 viewModel.onPostinComplete()
             }
         })
+
+        binding.homeButton.setOnClickListener { view : View ->
+            binding.apply {
+                view.findNavController().navigate(R.id.action_scoreFragment_to_titleFragment)
+            }
+        }
 
         Toast.makeText(context, "คุณได้คะแนน: ${viewModel.score.value} คะแนน", Toast.LENGTH_LONG).show()
 

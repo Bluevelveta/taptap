@@ -1,0 +1,39 @@
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="scoreData"
+        type="com.example.taptap.Score" />
+</data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp">
+
+
+        <TextView
+            android:id="@+id/data_score"
+            android:layout_width="102dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="@{Integer.toString(scoreData.score)}"
+            android:textSize="36dp"
+            app:layout_constraintEnd_toStartOf="@+id/data_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/data_name"
+            android:layout_width="125dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="80dp"
+            android:text="@{scoreData.name}"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

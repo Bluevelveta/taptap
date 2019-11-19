@@ -29,6 +29,12 @@ class titleFragment : Fragment() {
             }
         }
 
+        binding.scoreButton.setOnClickListener { view : View ->
+            binding.apply {
+                view.findNavController().navigate(R.id.action_titleFragment_to_scoreboradFragment)
+            }
+        }
+
         return binding.root
     }
 

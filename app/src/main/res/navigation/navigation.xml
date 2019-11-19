@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
             app:destination="@+id/gameFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_scoreboradFragment"
+            app:destination="@id/scoreboradFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -40,4 +43,8 @@
             android:name="score"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/scoreboradFragment"
+        android:name="com.example.taptap.scoreboardFragment"
+        android:label="scoreboradFragment" />
 </navigation>
