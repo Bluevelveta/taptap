@@ -47,4 +47,12 @@
         android:id="@+id/scoreboradFragment"
         android:name="com.example.taptap.scoreboardFragment"
         android:label="scoreboradFragment" />
+    <fragment
+        android:id="@+id/ruleFragment"
+        android:name="com.example.taptap.ruleFragment"
+        android:label="ruleFragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.taptap.aboutFragment"
+        android:label="aboutFragment" />
 </navigation>

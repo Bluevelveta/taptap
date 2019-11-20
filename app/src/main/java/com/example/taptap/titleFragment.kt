@@ -2,13 +2,13 @@ package com.example.taptap
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.taptap.databinding.TitleFragmentBinding
+import com.google.android.material.snackbar.Snackbar
 
 
 class titleFragment : Fragment() {
@@ -35,7 +35,25 @@ class titleFragment : Fragment() {
             }
         }
 
+        binding.logoButton.setOnClickListener{view :View ->
+            binding.apply {
+                Snackbar.make(view, "Taptap!!! version 1.0.0.1", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+            }
+        }
+        setHasOptionsMenu(true)
+
         return binding.root
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater?.inflate(R.menu.option_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item!!,
+            view!!.findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

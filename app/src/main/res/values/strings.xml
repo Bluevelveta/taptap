@@ -7,4 +7,18 @@
     <string name="home">home</string>
     <string name="share">share</string>
     <string name="shareText">ฉันได้คะแนน %1$d จากแอพ Taptap!</string>
+    <string name="allTime">in 30 s.</string>
+    <string name="scoreboard_text">Score</string>
+    <string name="aboutDetail">เกม Taptap เป็นเกมที่ทดสอบความของนิ้วว่าคุณสามารถกดได้เร็วแค่ไหน</string>
+    <string name="aboutAuthor">นายทองเทพ กลิ่นบุบผาชัย 59160563</string>
+    <string name="nav_head">Taptap!!!</string>
+    <string name="rule_detail">ทำการกดปุ่มสีแดงให้ได้มากที่สุดภายในเวลาที่กำหนด</string>
+    <string name="play">play</string>
+    <string name="score">score</string>
+    <string name="name">Name</string>
+    <string name="rule">Rule</string>
+    <string name="in_90_s">in 90 s.</string>
+    <string name="aboutThis">About</string>
+    <string name="about">About</string>
+    <string name="ruleThis">Rule</string>
 </resources>

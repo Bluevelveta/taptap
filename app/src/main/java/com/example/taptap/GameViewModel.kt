@@ -62,8 +62,7 @@ class GameViewModel(finalname:String) : ViewModel() {
     companion object {
         private const val DONE = 0L
         private const val ONE_SECOND = 1000L
-//        private const val COUNTDOWN_TIME = 90000L
-        private const val COUNTDOWN_TIME = 5000L
+    private const val COUNTDOWN_TIME = 30000L
     }
 
 
