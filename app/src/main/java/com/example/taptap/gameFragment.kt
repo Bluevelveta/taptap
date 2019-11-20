@@ -2,6 +2,7 @@ package com.example.taptap
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -45,6 +46,7 @@ class gameFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.gameViewModel = viewModel
 
+        Log.i("GameFragment","GameFragment on Create")
         return binding.root
     }
 

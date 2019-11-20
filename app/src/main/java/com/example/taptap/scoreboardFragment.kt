@@ -2,6 +2,7 @@ package com.example.taptap
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -36,8 +37,9 @@ class scoreboardFragment : Fragment() {
 
         viewModel.scoreList?.observe(this, Observer {
             adapter.submitList(it)
-
         })
+        Log.i("ScoreboradFragment","ScoreboradFragment on Create")
+
         return binding.root
     }
 

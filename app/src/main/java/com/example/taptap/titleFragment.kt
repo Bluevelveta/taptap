@@ -2,6 +2,7 @@ package com.example.taptap
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
@@ -42,6 +43,8 @@ class titleFragment : Fragment() {
             }
         }
         setHasOptionsMenu(true)
+
+        Log.i("TitleFragment","Title on Create")
 
         return binding.root
     }
